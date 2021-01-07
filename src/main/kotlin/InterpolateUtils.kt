@@ -9,8 +9,8 @@ import kotlin.math.min
 object InterpolateUtils {
 
     fun interpolate(low: Int, high: Int, level: Int) : Double {
-        val value = floor(low * (99 - level) / 98.toDouble()) + floor(high * (level - 1) / 98.toDouble()) + 1
-        return min(max((value / 256), 0.toDouble()), 1.toDouble())
+        val value = floor(low * (99 - level) / 98.0) + floor(high * (level - 1) / 98.0) + 1
+        return min(max((value / 256), 0.0), 1.0)
     }
 
     fun cascadeInterpolate(bounds: Array<Bound>, level: Int, index: Int) : Double {
