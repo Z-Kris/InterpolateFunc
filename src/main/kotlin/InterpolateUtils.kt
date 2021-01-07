@@ -14,6 +14,7 @@ object InterpolateUtils {
     }
 
     fun cascadeInterpolate(bounds: Array<Bound>, level: Int, index: Int) : Double {
+        assert(bounds contentEquals bounds.copyOf().sortedByDescending { it.req }.toTypedArray()) { "Elements array is not sorted." }
         var rate = 1.0
         for (i in bounds.indices) {
             val v = bounds[i]
